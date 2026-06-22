@@ -1,0 +1,25 @@
+.numbut{
+    margin: auto;
+    display :flex;
+    border:3px solid black;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width:50%;
+    justify-content:space-around;
+}
+.nums-b{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width:25%;
+    margin:auto;
+    
+    
+
+}
+.buton{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
