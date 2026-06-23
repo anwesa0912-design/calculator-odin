@@ -1,5 +1,11 @@
 const bb=document.querySelector('.numbut');
-for(let i=0;i<16;i++){
+const sc=document.createElement('div');
+bb.appendChild(sc);
+sc.classList.add('screen');
+let f='';
+let o='';
+let t='';
+for(let i=0;i<18;i++){
     const d=document.createElement('div');
     d.classList.add('nums-b');
     const b=document.createElement('button') 
@@ -21,9 +27,54 @@ for(let i=0;i<16;i++){
     else if(i==14){
         b.textContent='^';
     }
-    else{
+    else if(i==15){
         b.textContent='.';
     }
+    else if(i==16){
+        b.textContent='=';
+    }
+    else{
+        b.textContent='C';
+    }
+    b.addEventListener('click',()=>{
+        if(b.textContent ==='C'){
+            sc.textContent='';
+            f='';
+            o=''
+            t='';
+        }
+        else if(b.textContent ==='='){
+            const n1=Number(f);
+            const n2=Number(t);
+            if(o==='+'){
+                sc.textContent=n1+n2;
+            }else if(o==='-'){
+                sc.textContent=n1-n2;
+            }else if(o==='x'){
+                sc.textContent=n1*n2;
+            }else if(o==='/'){
+                sc.textContent=n1/n2;
+            }else{
+                sc.textContent=Math.pow(n1,n2);
+            }
+            f='';
+            o='';
+            t='';
+        }
+        else if(b.textContent==='+'|| b.textContent==='-'||b.textContent==='/'||b.textContent==='x'||b.textContent==='^'){
+            o=b.textContent;
+            sc.textContent='';
+        }
+        else{
+            if(o ===''){
+                f+=b.textContent;
+                sc.textContent=f;
+            }else{
+                t+=b.textContent;
+                sc.textContent=t;
+            }
+        }
+    });
     d.appendChild(b);
     bb.appendChild(d);
 }
