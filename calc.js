@@ -78,3 +78,45 @@ for(let i=0;i<18;i++){
     d.appendChild(b);
     bb.appendChild(d);
 }
+window.addEventListener('keydown',(e)=>{
+    if(e.key==='Shift'){
+        return;
+    }
+     else if(e.key ==='C'){
+            sc.textContent='';
+            f='';
+            o=''
+            t='';
+        }
+        else if(e.key ==='='){
+            const n1=Number(f);
+            const n2=Number(t);
+            if(o==='+'){
+                sc.textContent=n1+n2;
+            }else if(o==='-'){
+                sc.textContent=n1-n2;
+            }else if(o==='*'){
+                sc.textContent=n1*n2;
+            }else if(o==='/'){
+                sc.textContent=n1/n2;
+            }else{
+                sc.textContent=Math.pow(n1,n2);
+            }
+            f='';
+            o='';
+            t='';
+        }
+        else if(e.key==='+'|| e.key==='-'||e.key==='/'||e.key==='*'||e.key==='^'){
+            o=e.key;
+            sc.textContent='';
+        }
+        else{
+            if(o ===''){
+                f+=e.key;
+                sc.textContent=f;
+            }else{
+                t+=e.key;
+                sc.textContent=t;
+            }
+        }
+});

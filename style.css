@@ -1,7 +1,7 @@
 .numbut{
     margin: auto;
     display :flex;
-    border:3px solid goldenrod;
+    border:5px solid goldenrod;
     height:50vh;
     flex-wrap: wrap;
     color:aliceblue;
@@ -36,6 +36,6 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.669);
+    background-color: rgba(13, 3, 42, 0.607);
     color:aliceblue;
 }
